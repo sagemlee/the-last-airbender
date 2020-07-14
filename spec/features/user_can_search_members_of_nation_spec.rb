@@ -9,7 +9,7 @@ feature "user can search members of nation" do
       click_on "Search For Members"
       
       expect(current_path).to eq("/search")
-      expect(page).to have_content("20 total occupants")
+      expect(page).to have_content("20 total members")
       
       expect(page).to have_css(".member", count: 20)
 

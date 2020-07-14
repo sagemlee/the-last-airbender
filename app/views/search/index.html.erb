@@ -1,7 +1,20 @@
 <% @members.each do |member| %>
-    <%= member.name %>
-    <%= member.photo %>
+    <section class=member>
+        <div class=name>
+            <%= member.name %>
+        </div>
+        <div class =img>
+    <%= member.photo_url %>
+        </div>
+        <div class =allies>
     <%= member.allies %>
+        </div>
+        <div class=enemies>
     <%= member.enemies %>
+        </div>
+        <div class=affiliation>
     <%= member.affiliation %>
+        </div>
+    </section>
    <%end%>
+   <h4><%=@members.count%> total members</h4>
