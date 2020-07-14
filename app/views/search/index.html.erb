@@ -1,23 +1,13 @@
 <h1> Members of <%=params[:nation]%> </h1>
 
 <% @members.each do |member| %>
-    
-    <section class=member>
-        <div class=name>
-            <%= member.name %>
-        </div>
-        <div class =img>
-    <%= member.photo_url %>
-        </div>
-        <div class =allies>
-    <%= member.allies %>
-        </div>
-        <div class=enemies>
-    <%= member.enemies %>
-        </div>
-        <div class=affiliation>
-    <%= member.affiliation %>
-        </div>
-    </section>
+    <ul class=member>
+        <li class=name>Name:<%= member.name %><li>
+        <li class=allies>Allies:<%= member.allies %><li>
+        <li class=enemies>Enemies:<%= member.enemies %><li>
+        <li class=affiliation>Affiliation:<%= member.affiliation %><li>
+        <li class=img><img src="#{member.photo_url}<li>
+    </ul>
    <%end%>
+
    <h4><%=@members.count%> total members</h4>
