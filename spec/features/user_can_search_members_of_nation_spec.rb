@@ -5,14 +5,15 @@ feature "user can search members of nation" do
 
       visit '/'
 
-      select "Fire Nation", from: :state
+      select "Fire Nation", from: :nation
       click_on "Search For Members"
+      
       expect(current_path).to eq("/search")
       expect(page).to have_content("20 total occupants")
       
-      expect(page).to have_css(".occupant", count: 20)
+      expect(page).to have_css(".member", count: 20)
 
-      within(first(".occupant")) do
+      within(first(".member")) do
         expect(page).to have_css(".name")
         expect(page).to have_css(".img")
         expect(page).to have_css(".allies")
